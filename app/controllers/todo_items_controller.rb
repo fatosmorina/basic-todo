@@ -4,4 +4,9 @@ class TodoItemsController < ApplicationController
     @todo_list = TodoList.find(params[:todo_list_id])
     @todo_item = @todo_list.todo_items.create(params[:todo_item].permit(:content))
   end
+
+private
+  def set_todo_list
+    @todo_list = TodoList.find(params[:todo_list_id])
+  end
 end
