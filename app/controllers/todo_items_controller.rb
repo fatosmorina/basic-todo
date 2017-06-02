@@ -8,6 +8,10 @@ class TodoItemsController < ApplicationController
     redirect_to @todo_list
   end
 
+  def complete
+    @todo_item.update_attribute(:completed_at, Time.now)
+  end
+
   def destroy
     if @todo_item.destroy
       flash[:success] = "Todo Item was deleted"
