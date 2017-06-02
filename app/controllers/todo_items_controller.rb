@@ -10,6 +10,7 @@ class TodoItemsController < ApplicationController
 
   def complete
     @todo_item.update_attribute(:completed_at, Time.now)
+    redirect_to @todo_list, notice: "Congratulations. Keep up the great work!"
   end
 
   def destroy
